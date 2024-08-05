@@ -8,7 +8,7 @@ In the below example, I have ingested a large PDF document. (The 900+ pages of t
 
 One can ingest any single PDF document. (None are included in this repository to avoid possible copyright issues.)
     
-Keep in mind that the input to the LLM may include up to 125,000 tokens for the retrieved context for a query. I have seen good results with OpenAI's gpt-4o-mini to reduce API costs as low as possible.
+Keep in mind that the input to the LLM may include up to 125,000 tokens for the retrieved context for a query. I have seen good results with OpenAI's gpt-4o-mini model in order to reduce API costs as low as possible. Model details are in model_config.json.
 
 ### Setup
 
