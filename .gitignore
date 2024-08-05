@@ -1,0 +1,6 @@
+.env
+/docs
+/.vscode
+/__pycache__
+/faiss_index
+document_config.json
