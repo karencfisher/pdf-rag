@@ -4,7 +4,7 @@ This repository provides an example of a basic application to ingest a PDF file,
 
 In the below example, I have ingested a large PDF document (the 900+ pages of the "Project 2025" that is much in the current news but too long for many to read in its entriety). One can then ask the model to summarize various topics from within the document.
 
-![screenshot](/images/Screenshot.jpg)
+![screenshot](/Images/Screenshot.jpg)
 
 One can ingest any single PDF document. (None are included in this repository to avoid possible copyright issues.)
     
