@@ -2,7 +2,7 @@
 
 This repository provides an example of a basic application to ingest a PDF file, and provide a web UI to make queries about its content. It is a basic example of a RAG -- "Retrieval Augmented Generation" -- model.
 
-In the below example, I have ingested a large PDF document (the 900+ pages of the "Project 2025," that is much in the current news, but too long for many to read in its entriety). One can then ask the model to summarize various topics from within the document.
+In the below example, I have ingested a large PDF document. (The 900+ pages of the "Project 2025," that is much in the current news, but too long for many to read in its entriety. Hence it is a good example of the power of this type of model.) One can then ask the model to summarize various topics from within the document.
 
 ![screenshot](/Images/Screenshot.jpg)
 
