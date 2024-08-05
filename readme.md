@@ -43,6 +43,8 @@ python loadBook.py <title> <PDF-path> <chunk-size> <overlap>
 
 Where \<title> is the title as it ahould appear in the UI, \<PDF-path> is the actual PDF file, \<chunk-size> is the desired of excerpt sizes in tokens, and \<overlap> is any overlap between excerpts in tokens.
 
+This process may take some time, depending on the length of the source document (in the example here, it took roughly 20 minutes on my machine). Once a PDF has been ingested, however, the vector DB is persisted to disk in the faiss_index folder in the project, and details about the document is stored in document_config.json. 
+
 2) Run the app:
 
 ```
