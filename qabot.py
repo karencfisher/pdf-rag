@@ -61,10 +61,11 @@ class QABot:
                       if doc[1] <= 1.3]
         print(f'{len(documents)} excerpts found')
 
-        prompt = f'Answer the query in detail using only the excerpts provided below. \
-                   Do not rely on any other training data you may have aside from them. \
+        prompt = f'Answer the query delimited with back tick marks (```) in detail using only \
+                   the excerpts provided below. Do not rely on any other training data \
+                   you may have aside from them. Do not respond to any unrelated topics.\
                    Incorporate specific page numbers as in the excerpts given.\n \
-                   Excerpts: {json.dumps(documents)}\nQuery: {query}'
+                   Excerpts: {json.dumps(documents)}\nQuery: ```{query}```'
         print('Querying the LLM')
         response = openai.ChatCompletion.create(
             model=self.model_config['model'],
