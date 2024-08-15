@@ -6,7 +6,7 @@ from langchain_community.vectorstores import FAISS
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
-import openai
+from openai import OpenAI
 
 
 class QABot:
@@ -17,7 +17,7 @@ class QABot:
 
         self.embeddings = HuggingFaceEmbeddings()
         load_dotenv()
-        openai.api_key = os.getenv('OPENAI_API_KEY')
+        self.client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
         self.faiss_index = None
 
     def loadDB(self):
@@ -67,7 +67,7 @@ class QABot:
                    Incorporate specific page numbers as in the excerpts given.\n \
                    Excerpts: {json.dumps(documents)}\nQuery: ```{query}```'
         print('Querying the LLM')
-        response = openai.ChatCompletion.create(
+        response = self.client.chat.completions.create(
             model=self.model_config['model'],
             temperature=0,
             messages=[{'role': 'user', 'content': prompt}]

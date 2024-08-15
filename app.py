@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request, render_template
 from qabot import QABot
-from openai.error import RateLimitError
+from openai import RateLimitError
 import json
 
 
