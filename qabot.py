@@ -5,7 +5,7 @@ import json
 from langchain_community.vectorstores import FAISS
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_openai.embeddings import OpenAIEmbeddings
 from openai import OpenAI
 
 
@@ -15,8 +15,8 @@ class QABot:
             self.model_config = json.load(FILE)
         print(f'Model in use: {self.model_config["model"]}')
 
-        self.embeddings = HuggingFaceEmbeddings()
         load_dotenv()
+        self.embeddings = OpenAIEmbeddings(openai_api_key=os.getenv('OPENAI_API_KEY'))
         self.client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
         self.faiss_index = None
 
